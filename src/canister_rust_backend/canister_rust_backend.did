@@ -1,3 +1,6 @@
 service : {
     "read": () -> (nat);
+    "increment": () -> ();
+    "get": () -> (nat) query;
+    "set": (nat) -> ();
 }
