@@ -34,3 +34,11 @@ Prueba de canister en rust usando las [guías de Internet Computer](https://inte
     dfx build
     dfx canister install --all --mode upgrade
     ```
+
+-   Optimizar
+    -   Se necesita `ic-wasm` para reducir tamaño del _output_ de `WebAssembly`
+        ```bash
+        cargo install ic-wasm
+        mkdir -p src/canister-rust/target/wasm32-unknown-unknown/release/
+        ic-wasm target/wasm32-unknown-unknown/release/canister_rust_backend.wasm -o src/canister-rust/target/wasm32-unknown-unknown/release/canister_rust_backend_opt.wasm shrink
+        ```
